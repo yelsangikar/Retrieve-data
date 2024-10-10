@@ -6,13 +6,12 @@ import warnings
 warnings.filterwarnings('ignore')
 import streamlit as st
 import time
-import os
 
 def execute_sql_query(sql_query, database):
     try:
         # Create the connection string
         connection = pyodbc.connect(driver='ODBC Driver 17 for SQL Server',
-                                    server=os.getenv('server'),
+                                    server='TKTHP-SN566\\SQLEXPRESS04',
                                     Timeout=30,
                                     database=database,
                                     trusted_connection='yes')
