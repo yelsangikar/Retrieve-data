@@ -12,9 +12,10 @@ def execute_sql_query(sql_query, database):
         # Create the connection string
         connection = pyodbc.connect(driver='ODBC Driver 17 for SQL Server',
                                     server='TKTHP-SN566\\SQLEXPRESS04',
-                                    Timeout=30,
+                                    timeout=60,  # Increase timeout
                                     database=database,
                                     trusted_connection='yes')
+
 
         # Create a cursor from the connection
         cur = connection.cursor()
